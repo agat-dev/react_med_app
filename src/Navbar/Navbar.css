@@ -1,0 +1,215 @@
+/** 
+ * Following code has been commented with appropriate comments for your reference.
+ * Styling for the Header Navbar
+ */
+
+ /* Import fonts */
+ @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+/* Global CSS variables */
+:root {
+    --primary-800: #2F4CBC;
+    --primary-900: #1F327E;
+}
+
+/* Styling for the main navigation bar */
+nav {
+    position: fixed;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+}
+
+/* Styling for the dropdown menu */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    display: none;
+    min-width: 120px; 
+    padding: 8px 0;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+/* Styling for the user welcome message */
+.welcome-user {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Display dropdown menu on hover */
+.welcome-user:hover .dropdown-menu {
+    display: block;
+}
+
+/* Styling for the items in the dropdown menu */
+.dropdown-menu li {
+    display: block;
+    width: 150px;
+    padding:5px;
+}
+
+/* Styling for links in the dropdown menu */
+.dropdown-menu li a {
+    color: var(--primary-900, #1F327E);
+
+/* label-md/medium */
+font-family: "DM Sans";
+font-size: 1rem;
+font-style: normal;
+font-weight: 500;
+}
+
+/* Hover effect for links in the dropdown menu */
+.dropdown-menu li a:hover {
+    color: var(--primary-800, #2F4CBC);
+}
+
+/* Styling for the navigation logo */
+.nav__logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Styling for the logo in the navbar */
+.nav__logo img {
+    height: 1.5rem;
+}
+
+/* Styling for the logo text in the navbar */
+.nav__logo a {
+color: var(--primary-800, #2F4CBC);
+text-decoration: none;
+    /* paragraph-xl/bold */
+font-family: "DM Sans";
+font-size: 1.2rem;
+font-style: normal;
+font-weight: 700;
+}
+
+
+/* Styling for the navigation links */
+.nav__links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+/* Styling for individual links in the navigation */
+.link a {
+    padding: 0rem 1.5rem;
+    color: var(--primary-900, #1F327E);
+    text-decoration: none;
+
+    /* label-md/medium */
+    font-family: "DM Sans";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+/* Hover effect for individual links in the navigation */
+.link a:hover {
+    color: var(--primary-800, #2F4CBC);
+}
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 768px) {
+    .nav__logo {
+        margin-right: auto;
+    }
+
+    .nav__icon {
+        display: block;
+    }
+
+    .nav__links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .nav__links.active {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        margin: auto;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: center;
+        padding: .5rem 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+        animation: slideDown 0.5s ease-in-out; /* Animation effect */
+    }
+}
+
+/* Keyframes for slide down animation */
+@keyframes slideDown {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Button styles */
+/* Styling for btn1 */
+.btn1 {
+    border-radius: 35px;
+    padding: .5rem 1.5rem;
+    border: 2px solid var(--primary-800, #2F4CBC);
+    background: var(--base-white, #FFF);
+    color: var(--primary-800, #2F4CBC);
+    /* label-md/medium */
+    font-family: "DM Sans";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.btn1:hover {
+    background-color: var(--primary-800, #2F4CBC); /* Hover effect */
+    color: white; /* Hover effect */
+}
+
+.btn2 {
+    border: 2px solid var(--primary-800, #2F4CBC);
+    background-color: var(--primary-800, #2F4CBC);
+    color: var(--base-white, #FFF);
+    /* label-md/medium */
+    font-family: "DM Sans";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    border-radius: 35px;
+    padding: .5rem 1.5rem;    
+    display:flex; /* Align items and justify content */
+    align-items:center; /* Align items and justify content */
+    justify-content:center; /* Align items and justify content */
+    margin-top:3px; /* Margin from top */
+}
+
+.btn2:hover {
+    background-color:white; /* Hover effect */
+    color:var(--primary-800, #2F4CBC); /* Hover effect */
+}
+  

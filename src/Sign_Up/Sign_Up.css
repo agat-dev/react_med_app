@@ -1,0 +1,185 @@
+ /* Import fonts */
+ @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+/* Global CSS variables */
+:root {
+    --primary-800: #2F4CBC;
+    --primary-900: #1F327E;
+    --base-black: #000;
+}
+
+
+
+/* Styles for the container element */
+.container {
+    max-width: 900px; /* Set maximum width for the container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 40px; /* Add padding inside the container */
+    overflow: hidden; /* Hide any overflowing content */
+}
+
+/* Styles for the password visibility icon */
+.password-visibility {
+    position: relative; /* Set the position relative to its normal position */
+    top: -39px; /* Move the element 39 pixels up */
+    left: 92%; /* Move the element 92% to the right */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-size: 17px; /* Set font size */
+}
+
+/* Styles for the grid layout of the signup form */
+.signup-grid {
+    display: grid; /* Use grid layout for the element */
+    grid-template-columns: 0.1fr 1.5fr 8fr; /* Define columns with fractional widths */
+    grid-gap: 10px; /* Set the gap between grid items */
+}
+
+/* Styles for the main signup text */
+.signup-text {
+    margin-top: 30px; /* Add top margin */
+    grid-column: 1 / 4; /* Span across all three columns */
+    text-align: center; /* Center-align text */
+}
+
+/* Styles for additional signup text */
+.signup-text1 {
+    grid-column: 2 / 4; /* Span from second to third column from the end */
+    text-align: center; /* center-align text */
+    color: var(--base-black, #000);
+
+    /* paragraph-xxs/default */
+    font-family: "DM Sans";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.signup-text1 span a {
+    color: var(--primary-800, #2F4CBC); /* Set text color */
+    font-weight: 600; /* Set font weight to bold */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    text-decoration: none;
+    padding: 0 .5rem;
+}
+
+/* Styles for the signup form section */
+.signup-form {
+    grid-column: 1 / 4; /* Span from second to fourth column */
+}
+
+/* Styles for the overall signup container */
+.signup {
+    flex: 1; /* Use flexible layout to fill available space */
+    background-color: #fff; /* Set background color to white */
+    padding: 40px; /* Add padding inside the element */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a box shadow with opacity */
+}
+
+/* Styles for the signup heading */
+.signup-text h1 {
+    margin-bottom: 20px; /* Add bottom margin to the heading */
+    text-align: center; /* Center-align text */
+    color: var(--base-black, #000);
+
+    /* paragraph-xl/bold */
+    font-family: "DM Sans";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px; /* 150% */
+}
+
+/* Styles for the role text in signup */
+.signup-role {
+    font-size: 16px; /* Set font size */
+    margin-bottom: 10px; /* Add bottom margin */
+}
+
+/* Styles for form groups in the signup form */
+.form-group {
+    margin: 1rem auto; /* Set margin for form groups */
+    width: 30rem; /* Set width for form groups */
+}
+
+.form-group label {
+    
+    width: 30rem; /* Set width for form groups */
+    display: block; /* Display labels as blocks */
+    margin-bottom: 5px; /* Add bottom margin to labels */
+    color: var(--base-black, #000);
+    font-size: 1rem; /* Set font size */
+
+/* paragraph-xs/bold */
+font-family: "DM Sans";
+font-style: normal;
+font-weight: 700;
+line-height: 24px; /* 150% */
+letter-spacing: 0.32px;
+}
+
+.form-group input, .form-group select {   
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    width: fit-content; /* Set width for form groups */
+    min-width: 30rem; /* Set minimum width for form groups */
+    padding: 8px; /* Add padding inside form controls */
+    font-size: 1rem; /* Set font size */
+    border: 1px solid #ccc; /* Add border with color */
+    border-radius: 4px; /* Add border radius for rounded corners */
+    color: var(--dark-neutral-800, #808080);
+
+/* paragraph-xxs/medium */
+font-family: "DM Sans";
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 171.429% */
+letter-spacing: 0.28px;
+}
+
+/* Styles for form controls in the signup form */
+.form-control {
+    width: 40%; /* Set width of form controls */
+    padding: 8px; /* Add padding inside form controls */
+    font-size: 16px; /* Set font size */
+    border: 1px solid #ccc; /* Add border with color */
+    border-radius: 4px; /* Add border radius for rounded corners */
+}
+
+/* Styles for button group in the signup form */
+.btn-group {
+    margin-top: 3rem; /* Add a small top margin to button group */
+    margin-bottom: 20px; /* Add bottom margin to button group */
+    margin-left: auto; /* Add left margin to button group */
+    margin-right: auto; /* Add right margin to button group */
+    display: flex; /* Use flex layout for button group */
+    flex-direction: column; /* Set direction of button group to column */
+    justify-content: center; /* Center-align button group */
+    gap: 2rem; /* Set gap between buttons */
+}
+
+/* Styles for buttons in the signup form */
+.btn {
+    width: 30rem; /* Set width for buttons */
+    margin: 0 auto; /* Center-align buttons */
+    padding: 10px; /* Add padding inside buttons */
+    font-size: 1rem; /* Set font size for buttons */
+    border-radius: 4px; /* Add border radius for rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border-radius: 15px;
+    color: white
+}
+.btn:hover {
+    opacity: 0.8; /* Reduce opacity on hover */
+}
+
+/* Styles for primary button in the signup form */
+.btn-primary {
+    border: 1px solid var(--primary-800, #2F4CBC);
+    background: var(--primary-800, #2F4CBC); /* Set background color for primary button */
+}
+
+/* Styles for danger button in the signup form */
+.btn-danger {
+    border-radius: 15px;
+    border: 1px solid var(--error-700, #E94F54);
+    background: var(--error-700, #E94F54);
+}
