@@ -29,7 +29,7 @@ function Navbar() {
         <a href="../Landing_Page/LandingPage.html">Reviews</a>
        </li>
        <li className="link">
-        <a href="../Sign_Up/Sign_Up.html">
+        <a href="../signup">
          <button className="btn1">Sign Up</button>
         </a>
        </li>
