@@ -26,15 +26,15 @@ const SignUp = () => {
         </div>
         <div className="form-group">
         <label htmlFor="phone">Phone</label>
-        <input type="tel" name="phone" id="phone" required className="form-control" placeholder="Enter your phone number" aria-describedby="helpId" />
+        <input type="tel" name="phone" id="phone" pattern="[0-9]{10}" required className="form-control" placeholder="Enter your phone number" aria-describedby="helpId" />
         </div>
         <div className="form-group">
         <label htmlFor="email">Email</label>
-        <input type="email" name="email" id="email" required className="form-control" placeholder="Enter your email" aria-describedby="helpId" />
+        <input type="email" name="email" id="email" pattern="[0-9a-f]@[0-9a-f].[a-f]" required className="form-control" placeholder="Enter your email" aria-describedby="helpId" />
         </div>
         <div className="form-group">
         <label htmlFor="password">Password</label>
-        <input type="password" name="password" id="password" required className="form-control" placeholder="Enter your password" aria-describedby="helpId" />
+        <input type="password" name="password" id="password" pattern="[0-9a-fA-F]{8,16}" required className="form-control" placeholder="Enter your password" aria-describedby="helpId" />
         </div>
         <div className="btn-group">
         <button type="submit" className="btn btn-primary mb-2 mr-1 waves-effect waves-light">Submit</button>

@@ -16,11 +16,11 @@ const Login = () => {
      <form>
       <div className="form-group">
        <label htmlFor="email">Email</label>
-       <input type="email" name="email" id="email" className="form-control" placeholder="Enter your email" aria-describedby="helpId" />
+       <input type="email" name="email" id="email" pattern="[0-9a-f]@[0-9a-f].[a-f]" className="form-control" placeholder="Enter your email" aria-describedby="helpId" />
       </div>
       <div className="form-group">
        <label htmlFor="password">Password</label>
-       <input type="password" name="password" id="password" className="form-control" placeholder="Enter your password" aria-describedby="helpId" />
+       <input type="password" name="password" id="password" pattern="[0-9a-fA-F]{8,16}" className="form-control" placeholder="Enter your password" aria-describedby="helpId" />
       </div>
       <div className="btn-group">
        <button type="submit" className="btn btn-primary mb-2 mr-1 waves-effect waves-light">Login</button>
