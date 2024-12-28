@@ -41,6 +41,10 @@ const Sign_Up = () => {
             sessionStorage.setItem("phone", phone);
             sessionStorage.setItem("email", email);
 
+            // Store the user status of login in session storage
+            sessionStorage.setItem("isLogged", true);
+
+
             // Redirect user to home page
             navigate("/");
             window.location.reload(); // Refresh the page

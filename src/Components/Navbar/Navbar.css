@@ -15,7 +15,7 @@
 /* Styling for the main navigation bar */
 nav {
     position: fixed;
-    top: 0%;
+    top: 3%;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
@@ -106,7 +106,7 @@ font-weight: 700;
 }
 
 /* Styling for individual links in the navigation */
-.link a {
+.link a, span {
     padding: 0rem 1.5rem;
     color: var(--primary-900, #1F327E);
     text-decoration: none;
