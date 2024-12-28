@@ -2,12 +2,13 @@ function Navbar() {
     const handleClick = () => {
      // Handle click event
     };
+    const isLogged = sessionStorage.getItem('isLogged') === 'true';
     
     return (
      <nav>
       <div className="nav__logo">
        <img src="/logo.png" alt="logo" className="logo" />
-       <a href="../Landing_Page/LandingPage.html">
+       <a href="/">
         StayHealthy
        </a>
        <span>.</span>
@@ -17,26 +18,34 @@ function Navbar() {
       </div>
       <ul className="nav__links active">
        <li className="link">
-        <a href="../Landing_Page/LandingPage.html">Home</a>
+        <a href="/">Home</a>
        </li>
        <li className="link">
-        <a href="../Landing_Page/LandingPage.html">Appointments</a>
+        <a href="/">Appointments</a>
        </li>
        <li className="link">
-        <a href="../Landing_Page/LandingPage.html">Health Blog</a>
+        <a href="/">Health Blog</a>
        </li>
        <li className="link">
-        <a href="../Landing_Page/LandingPage.html">Reviews</a>
+        <a href="/">Reviews</a>
        </li>
        <li className="link">
-        <a href="../signup">
-         <button className="btn1">Sign Up</button>
-        </a>
+        {isLogged ? (
+            <span>Welcome {sessionStorage.getItem("name")}</span>
+        ) : (
+            <a href="../signup">
+                <button className="btn2">Sign Up</button>
+            </a>
+        )}
        </li>
        <li className="link">
-        <a href="../login">
-         <button className="btn2">Login</button>
-        </a>
+            {isLogged ? (
+                <button className="btn2">Logout</button>
+            ) : (
+                <a href="../login">
+                    <button className="btn2">Login</button>
+                </a>
+            )}
        </li>
       </ul>
      </nav>
