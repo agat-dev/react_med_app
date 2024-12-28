@@ -26,7 +26,7 @@ function Navbar() {
         <a href="/">Home</a>
        </li>
        <li className="link">
-        <a href="../instant-consultation">Appointments</a>
+        <a href="/">Appointments</a>
        </li>
        <li className="link">
         <a href="/">Health Blog</a>
@@ -58,4 +58,3 @@ function Navbar() {
     }
     
     export default Navbar;
-    
