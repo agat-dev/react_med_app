@@ -13,6 +13,7 @@ import InstantConsultation from './Components/InstantConsultationBooking/Instant
 import Notification from './Components/Notification/Notification';
 
 function App() {
+
   return (
     <div className="App">
         {/* Set up BrowserRouter for routing */}
@@ -24,11 +25,11 @@ function App() {
             {/* Define individual Route components for different pages */}
             <Route path="/" element={<LandingPage/>}/>
             <Route path="/signup" element={<SignUp/>}/>
-            <Route path="/login" element={<Login/>}/>            
+            <Route path="/login" element={<Login/>}/>   
+            <Route path="/" element={<Notification/>}/>            
             <Route path="/instant-consultation" element={<InstantConsultation/>}/>
           </Routes>
-        </BrowserRouter>
-        <Notification />/>
+        </BrowserRouter>/>
     </div>
   );
 }

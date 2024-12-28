@@ -6,6 +6,8 @@ import AppointmentFormIC from '../AppointmentFormIC/AppointmentFormIC'
 import { v4 as uuidv4 } from 'uuid';
 
 
+
+
 const DoctorCardIC = ({ name, speciality, experience, ratings, profilePic }) => {
   const [showModal, setShowModal] = useState(false);
   const [appointments, setAppointments] = useState([]);
@@ -88,7 +90,7 @@ const DoctorCardIC = ({ name, speciality, experience, ratings, profilePic }) => 
         ) : (
          <AppointmentFormIC doctorName={name} doctorSpeciality={speciality} onSubmit={handleFormSubmit} />
         )}
-        <button onClick={handleBooking}>Close</button>
+        <button onClick={close}>Close</button>
        </div>
       )}
      </Popup> 
