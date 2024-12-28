@@ -3,6 +3,12 @@ function Navbar() {
      // Handle click event
     };
     const isLogged = sessionStorage.getItem('isLogged') === 'true';
+
+    const handleLogout = () => {
+        sessionStorage.removeItem('isLogged');
+        sessionStorage.removeItem('email');
+        window.location.reload();
+    };
     
     return (
      <nav>
@@ -40,7 +46,7 @@ function Navbar() {
        </li>
        <li className="link">
             {isLogged ? (
-                <button className="btn2">Logout</button>
+                <button className="btn2"  onClick={handleLogout}>Logout</button>
             ) : (
                 <a href="../login">
                     <button className="btn2">Login</button>
