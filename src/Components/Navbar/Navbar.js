@@ -4,9 +4,8 @@ function Navbar() {
     };
     const isLogged = sessionStorage.getItem('isLogged') === 'true';
 
-    const handleLogout = () => {
-        sessionStorage.removeItem('isLogged');
-        sessionStorage.removeItem('email');
+    const handleLogout = () => {        
+        sessionStorage.clear();
         window.location.reload();
     };
     

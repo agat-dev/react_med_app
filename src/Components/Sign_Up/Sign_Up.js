@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { API_URL } from '/home/project/react_med_app/src/server/config';
 
 // Function component for Sign Up form
-const Sign_Up = () => {
+const SignUp = () => {
     // State variables using useState hook
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -97,4 +97,4 @@ const Sign_Up = () => {
     );
 }
 
-export default Sign_Up; // Export the Sign_Up component for use in other components
+export default SignUp; // Export the Sign_Up component for use in other components

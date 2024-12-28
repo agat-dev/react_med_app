@@ -1,7 +1,7 @@
 // Following code has been commented with appropriate comments for your reference.
 import React, { useState, useEffect } from 'react';
 // Apply CSS according to your design theme or the CSS provided in week 2 lab 2
-
+import './Login.css'
 import { Link, useNavigate } from 'react-router-dom';
 import { API_URL } from '/home/project/react_med_app/src/server/config';
 
@@ -19,7 +19,7 @@ const Login = () => {
     if (sessionStorage.getItem("auth-token")) {
       navigate("/");
     }
-  }, []);
+  }, [navigate]);
 
   // Function to handle login form submission
   const login = async (e) => {
