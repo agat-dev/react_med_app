@@ -10,6 +10,7 @@ import LandingPage from './Components/LandingPage/LandingPage';
 import SignUp from './Components/Sign_Up/Sign_Up';
 import Login from './Components/Login/Login';
 import InstantConsultation from './Components/InstantConsultationBooking/InstantConsultation';
+import Notification from './Components/Notification/Notification';
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
             <Route path="/instant-consultation" element={<InstantConsultation/>}/>
           </Routes>
         </BrowserRouter>
-        
+        <Notification />/>
     </div>
   );
 }

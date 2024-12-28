@@ -16,10 +16,10 @@ const Notification = ({ children }) => {
     const storedUsername = sessionStorage.getItem('email');
     const storedDoctorData = JSON.parse(localStorage.getItem('doctorData'));
     const storedAppointmentData = JSON.parse(localStorage.getItem(storedDoctorData?.name));
-        // Retrieve stored appointment time and date from localStorage
-    const storedAppointmentTime = localStorage.getItem('appointmentTime');
-    const storedAppointmentDate = localStorage.getItem('appointmentDate');
-    const storedUserName = localStorage.getItem('userName');
+    // Retrieve stored appointment time and date from localStorage
+    const storedUserName = JSON.parse(localStorage.getItem(storedUsername?.name));
+    const storedAppointmentDate = JSON.parse(localStorage.getItem(storedAppointmentData?.date));
+    const storedAppointmentTime = JSON.parse(localStorage.getItem(storedAppointmentData?.time));
     
     // Set appointment time and date state if they exist
     if (storedAppointmentTime) {
@@ -66,12 +66,15 @@ const Notification = ({ children }) => {
               <p className="appointment-card__message">
                 {/* Display doctor's name from doctorData */}
                 <strong>Doctor:</strong> {doctorData?.name}
+                <strong>Name:</strong>{username}                
+                <strong>Date:</strong> {appointmentData?.date}
+                <strong>Time slot:</strong> {appointmentData?.time}
               </p>
             </div>
           </div>
         </>
       )}
-    </div>
+    </div>  
   );
 };
 

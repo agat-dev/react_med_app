@@ -40,7 +40,7 @@
 }
 
 
-.appointment-form input {
+.appointment-form input, .appointment-form select {
     max-width: 100%;
     margin: auto;
     min-width: 100%;

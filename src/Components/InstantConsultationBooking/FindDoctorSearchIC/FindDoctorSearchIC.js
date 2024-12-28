@@ -18,6 +18,7 @@ const FindDoctorSearchIC = () => {
         navigate(`/instant-consultation?speciality=${speciality}`);
         window.location.reload();
     }
+    
     return (
         <div className='finddoctor'>
             <center>
