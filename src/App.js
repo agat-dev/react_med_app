@@ -27,7 +27,11 @@ function App() {
             <Route path="/instant-consultation" element={<InstantConsultation/>}/>
           </Routes>
         </BrowserRouter>
-        
+        <div className="popup" style={{ display: 'none', position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', padding: '20px', backgroundColor: 'white', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)' }}>
+            <h2>Notification</h2>
+            <p>This is a popup message.</p>
+            <button onClick={() => document.querySelector('.popup').style.display = 'none'}>Close</button>
+        </div>
     </div>
   );
 }
