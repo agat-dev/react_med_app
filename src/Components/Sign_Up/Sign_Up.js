@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import './Sign_Up.css'
 import { useNavigate } from 'react-router-dom';
-import { API_URL } from '../../config';
+import { API_URL } from '/home/project/react_med_app/src/server/config';
 
 // Function component for Sign Up form
 const Sign_Up = () => {
@@ -22,7 +22,7 @@ const Sign_Up = () => {
         const response = await fetch(`${API_URL}/api/auth/register`, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json", 
+                "Content-Type": "application/json",
             },
             body: JSON.stringify({
                 name: name,
