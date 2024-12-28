@@ -34,3 +34,24 @@
     text-align: left;
     font-size: 15px;
 }
+
+.appointment-form .form-group {
+    width: 100%;
+}
+
+
+.appointment-form input {
+    max-width: 100%;
+    margin: auto;
+    min-width: 100%;
+}
+
+.doctor_img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 15rem;
+    object-fit: cover;
+    object-position: top center;
+    background:  #f0f0f5; 
+    padding-top: 1rem;
+}
