@@ -1,9 +1,21 @@
 // import components
 import './ReviewForm.css' ;
+import React, { useState } from 'react'
 
+function ReviewForm() {     
+    const [doctors, setDoctors] = useState([]);
 
-function ReviewForm() {
+    const getDoctors = () => {
+        fetch('https://api.npoint.io/9a5543d36f1460da2f63')
+           .then(res => res.json())
+           .then(data => {               
+                data.map( doctor => doctors.setDoctors)
+           })      
+           .catch(err => console.log(err));
+       }
 
+    
+    
 
     return (
         <div>
@@ -20,17 +32,7 @@ function ReviewForm() {
                         <div className='tr'><strong>Provide Feedback</strong></div>
                         <div className='tr'><strong>Review Given</strong></div>
 
-                        <div>1</div>
-                        <div>Dr. John Doe</div>
-                        <div>Cardiology</div>
-                        <div><button className='btn2'>Give a review</button></div>
-                        <div></div>
-
-                        <div>2</div>
-                        <div>Dr. Jane Smith</div>
-                        <div>Dermatology</div>
-                        <div><button className='btn2'>Give a review</button></div>
-                        <div></div>
+                        
 
                 </div>
             </div>
@@ -39,5 +41,23 @@ function ReviewForm() {
     );
 
 }
+
+const DoctorLine = ({ name, speciality, review }, {key}) => {
+    name = doctors.name;
+    speciality = doctors.speciality;
+    review = doctors. review;
+    key = doctors.key;
+
+    return (
+        <>
+        <div>{key}</div>
+        <div>{name}</div>
+        <div>{speciality}</div>
+        <div><a href='/feedback' className='btn2'>Give a review</a></div>
+        <div>{review ? review : null}</div>
+        </>
+    );
+}
+
 
 export default ReviewForm;

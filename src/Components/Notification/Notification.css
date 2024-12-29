@@ -1,8 +1,3 @@
-:root {
-    --primary-800: #2F4CBC;
-    --primary-900: #1F327E;
-    --base-black: #000;
-}
 
 .appointment-card {
     width: max-content;
