@@ -3,6 +3,7 @@ function Navbar() {
      // Handle click event
     };
     const isLogged = sessionStorage.getItem('isLogged') === 'true';
+    const username = sessionStorage.getItem('name');
 
     const handleLogout = () => {        
         sessionStorage.clear();
@@ -36,7 +37,7 @@ function Navbar() {
        </li>
        <li className="link">
         {isLogged ? (
-            <span>Welcome {sessionStorage.getItem("name")}</span>
+            <span>Welcome {username}</span>
         ) : (
             <a href="../signup">
                 <button className="btn2">Sign Up</button>
