@@ -33,7 +33,7 @@ function Navbar() {
         <a href="/notif">Health Blog</a>
        </li>
        <li className="link">
-        <a href="/">Reviews</a>
+        <a href="/reviews">Reviews</a>
        </li>
        <li className="link">
         {isLogged ? (

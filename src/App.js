@@ -11,6 +11,7 @@ import SignUp from './Components/Sign_Up/Sign_Up';
 import Login from './Components/Login/Login';
 import InstantConsultation from './Components/InstantConsultationBooking/InstantConsultation';
 import Notification from './Components/Notification/Notification';
+import ReviewForm from './Components/ReviewForm/ReviewForm'
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
         <BrowserRouter>
           {/* Display the Navbar component */}
           <Navbar/>
-          {sessionStorage.getItem('hasNewAppointment') === 'false' ? null : (() => {                
+          {sessionStorage.getItem('hasNewAppointment') === 'false' ? null : (() => {       
                 return <Notification />;
                 })()}          
             {/* Set up the Routes for different pages */}
@@ -28,7 +29,8 @@ function App() {
             <Route path="/" element={<LandingPage/>}/>
             <Route path="/signup" element={<SignUp/>}/>
             <Route path="/login" element={<Login/>}/>          
-            <Route path="/instant-consultation" element={<InstantConsultation/>}/>           
+            <Route path="/instant-consultation" element={<InstantConsultation/>}/>    
+            <Route path="/reviews" element={<ReviewForm/>}/>                 
 
           </Routes>
         </BrowserRouter>
