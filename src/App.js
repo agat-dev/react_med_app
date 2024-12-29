@@ -13,21 +13,23 @@ import InstantConsultation from './Components/InstantConsultationBooking/Instant
 import Notification from './Components/Notification/Notification';
 
 function App() {
-
   return (
     <div className="App">
         {/* Set up BrowserRouter for routing */}
         <BrowserRouter>
           {/* Display the Navbar component */}
           <Navbar/>
-          <Notification />
-          {/* Set up the Routes for different pages */}
+          {sessionStorage.getItem('hasNewAppointment') === 'false' ? null : (() => {                
+                return <Notification />;
+                })()}          
+            {/* Set up the Routes for different pages */}
           <Routes>
             {/* Define individual Route components for different pages */}
             <Route path="/" element={<LandingPage/>}/>
             <Route path="/signup" element={<SignUp/>}/>
             <Route path="/login" element={<Login/>}/>          
-            <Route path="/instant-consultation" element={<InstantConsultation/>}/>
+            <Route path="/instant-consultation" element={<InstantConsultation/>}/>           
+
           </Routes>
         </BrowserRouter>
     </div>

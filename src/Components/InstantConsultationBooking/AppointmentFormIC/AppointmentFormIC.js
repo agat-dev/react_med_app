@@ -4,8 +4,9 @@ const AppointmentFormIC = ({ doctorName, doctorSpeciality, onSubmit }) => {
     const [name, setName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [selectedSlot, setSelectedSlot] = useState(null);
+    
 
-  
+ 
     const handleFormSubmit = (e) => {
      e.preventDefault();
      const appointmentData = {
@@ -19,7 +20,8 @@ const AppointmentFormIC = ({ doctorName, doctorSpeciality, onSubmit }) => {
       onSubmit({ name, phoneNumber });
       setName('');
       setPhoneNumber('');
-      setSelectedSlot('');
+      setSelectedSlot('');      
+      sessionStorage.setItem('hasNewAppointment',true);
     };
   
     return (

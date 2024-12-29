@@ -1,7 +1,7 @@
 // Following code has been commented with appropriate comments for your reference.
 import React, { useEffect, useState } from 'react';
-import Popup from 'reactjs-popup';
 import './Notification.css'
+import Navbar from '../Navbar/Navbar';
 
 // Function component Notification to display user notifications
 const Notification = ({ children }) => {
@@ -14,7 +14,7 @@ const Notification = ({ children }) => {
 
   const [appointmentData, setAppointmentData] = useState(null);
 
-  const [showModal, setShowModal] = useState(true);
+  sessionStorage.setItem('hasNewAppointment', 'false');
 
   // useEffect hook to perform side effects in the component
   useEffect(() => {
@@ -66,13 +66,9 @@ const Notification = ({ children }) => {
 
   // Return JSX elements to display Navbar, children components, and appointment details if user is logged in
   return (
-    <Popup
-    className='notif_popup'
-    modal
-    open={showModal}
-    onClose={() => setShowModal(false)}
-    >
     <div>
+      {/* Render Navbar component */}
+      <Navbar ></Navbar>
       {/* Render children components */}
       {children}
       {/* Display appointment details if user is logged in and appointmentData is available */}
@@ -95,7 +91,6 @@ const Notification = ({ children }) => {
         </>
       )}
     </div>  
-    </Popup>
   );
 };
 
