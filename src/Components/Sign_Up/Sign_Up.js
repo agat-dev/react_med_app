@@ -44,6 +44,11 @@ const SignUp = () => {
             // Store the user status of login in session storage
             sessionStorage.setItem("isLogged", true);
 
+                        // Store the data in local storage
+            localStorage.setItem("name", name);
+            localStorage.setItem("phone", phone);
+            localStorage.setItem("email", email);
+
 
             // Redirect user to home page
             navigate("/");

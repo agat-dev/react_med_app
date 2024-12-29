@@ -9,7 +9,9 @@ const Login = () => {
 
   // State variables for email and password
   const [password, setPassword] = useState("");
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState('');  
+  const name = localStorage.getItem("name");
+  console.log(name);
 
   // Get navigation function from react-router-dom
   const navigate = useNavigate();
@@ -41,7 +43,10 @@ const Login = () => {
     if (json.authtoken) {
       // If authentication token is received, store it in session storage
       sessionStorage.setItem('auth-token', json.authtoken);
-      sessionStorage.setItem('email', email);
+      sessionStorage.setItem('email', email); 
+      // Store the user status of login in session storage
+      sessionStorage.setItem("isLogged", true);
+      sessionStorage.setItem("name", name);
 
       // Redirect to home page and reload the window
       navigate('/');

@@ -1,0 +1,57 @@
+.searchpage-container {
+    max-width: 1200px;
+    margin: auto;
+    margin-top:10%;
+    color: #414146;
+    padding: 0 20px;
+    position: static;
+    width: 100%;
+}
+.searchpage-container img {
+    max-width: 100%;
+}
+.search-results-container .doctorcard{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 18px;
+    border-radius: 4px;
+    background-color: #fff;
+
+}
+
+.search-results-container>h2 {
+    text-align: left;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.search-results-container>h3 {
+    margin-top: 12px;
+    color: #2d2d32;
+    text-align: left;
+    font-size: 15px;
+}
+
+.appointment-form .form-group {
+    width: 100%;
+}
+
+
+.appointment-form input, .appointment-form select {
+    max-width: 100%;
+    margin: auto;
+    min-width: 100%;
+}
+
+.doctor_img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 15rem;
+    object-fit: cover;
+    object-position: top center;
+    background:  #f0f0f5; 
+    padding-top: 1rem;
+}

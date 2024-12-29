@@ -3,6 +3,7 @@ function Navbar() {
      // Handle click event
     };
     const isLogged = sessionStorage.getItem('isLogged') === 'true';
+    const username = sessionStorage.getItem('name');
 
     const handleLogout = () => {        
         sessionStorage.clear();
@@ -26,17 +27,17 @@ function Navbar() {
         <a href="/">Home</a>
        </li>
        <li className="link">
-        <a href="/">Appointments</a>
+        <a href="/instant-consultation">Appointments</a>
        </li>
        <li className="link">
-        <a href="/">Health Blog</a>
+        <a href="/notif">Health Blog</a>
        </li>
        <li className="link">
         <a href="/">Reviews</a>
        </li>
        <li className="link">
         {isLogged ? (
-            <span>Welcome {sessionStorage.getItem("name")}</span>
+            <span>Welcome {username}</span>
         ) : (
             <a href="../signup">
                 <button className="btn2">Sign Up</button>
@@ -58,4 +59,3 @@ function Navbar() {
     }
     
     export default Navbar;
-    
