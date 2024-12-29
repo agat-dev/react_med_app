@@ -4,16 +4,22 @@ const AppointmentFormIC = ({ doctorName, doctorSpeciality, onSubmit }) => {
     const [name, setName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [selectedSlot, setSelectedSlot] = useState(null);
-  
-    const handleSlotSelection = (slot) => {
-      setSelectedSlot(slot);
-    };
+
   
     const handleFormSubmit = (e) => {
-      e.preventDefault();
+     e.preventDefault();
+     const appointmentData = {
+        doctorName,
+        doctorSpeciality,
+        name,
+        phoneNumber,
+        selectedSlot,
+      };
+      localStorage.setItem('appointmentData', JSON.stringify(appointmentData));
       onSubmit({ name, phoneNumber });
       setName('');
       setPhoneNumber('');
+      setSelectedSlot('');
     };
   
     return (
@@ -40,9 +46,12 @@ const AppointmentFormIC = ({ doctorName, doctorSpeciality, onSubmit }) => {
         </div>
         <div className="form-group">
             <label htmlFor="timeSlot">Time Slot:</label>
-            <select>
+            <select
                 value={selectedSlot}
-                onChange={(e) => handleSlotSelection(e.target.value)}
+                onChange={(e) => setSelectedSlot(e.target.value)}
+                required
+                >
+                <option selected disabled value="">choose</option>
                 <option value="morning">Morning</option>
                 <option value="afternoon">Afternoon</option>
             </select>

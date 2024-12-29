@@ -20,16 +20,16 @@ function App() {
         <BrowserRouter>
           {/* Display the Navbar component */}
           <Navbar/>
+          <Notification />
           {/* Set up the Routes for different pages */}
           <Routes>
             {/* Define individual Route components for different pages */}
             <Route path="/" element={<LandingPage/>}/>
             <Route path="/signup" element={<SignUp/>}/>
-            <Route path="/login" element={<Login/>}/>   
-            <Route path="/" element={<Notification/>}/>            
+            <Route path="/login" element={<Login/>}/>          
             <Route path="/instant-consultation" element={<InstantConsultation/>}/>
           </Routes>
-        </BrowserRouter>/>
+        </BrowserRouter>
     </div>
   );
 }
