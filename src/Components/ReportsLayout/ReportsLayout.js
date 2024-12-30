@@ -25,8 +25,8 @@ const DoctorLine = ({ name, speciality, index}) => {
         <div>{index}</div>
         <div>{name}</div>
         <div>{speciality}</div>
-        <div><a href='/feedback' className='btn2'>View Report</a></div>
-        <div><a href='/feedback' className='btn2'>Download Report</a></div>
+        <div><a href='/medical_report.pdf' rel="noreferrer" target="_blank" className='btn2'>View Report</a></div>
+        <div><a href="/medical_report.pdf" download="medical_report.pdf"  className='btn2'>Download Report</a></div>
         </>
     );
 }         
@@ -34,11 +34,11 @@ const DoctorLine = ({ name, speciality, index}) => {
  return (
         <div>
             <div className="container">
-                <div className="reviews-text">
+                <div className="reports-text">
                     <h2>Reports</h2>
                 </div>
                 <br />
-                <div className="reviews-grid">
+                <div className="reports-grid">
 
                         <div className='tr'><strong>S.No</strong></div>
                         <div className='tr'><strong>Doctor Name</strong></div>
