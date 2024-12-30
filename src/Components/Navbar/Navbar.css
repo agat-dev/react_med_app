@@ -3,14 +3,6 @@
  * Styling for the Header Navbar
  */
 
- /* Import fonts */
- @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
-
-/* Global CSS variables */
-:root {
-    --primary-800: #2F4CBC;
-    --primary-900: #1F327E;
-}
 
 /* Styling for the main navigation bar */
 nav {

@@ -1,0 +1,10 @@
+.profile-container {
+    position: absolute;
+    top: 3rem;
+    width: 15rem;
+    height: max-content;
+    padding: 10px;
+    background-color: white;
+    border: solid 1px grey;
+    border-radius: 5px;
+}

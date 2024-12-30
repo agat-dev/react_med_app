@@ -11,7 +11,6 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState('');  
   const name = localStorage.getItem("name");
-  console.log(name);
 
   // Get navigation function from react-router-dom
   const navigate = useNavigate();

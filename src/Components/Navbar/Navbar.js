@@ -1,4 +1,9 @@
+import React, { useState } from 'react';
+import ProfileCard from "../ProfileCard/ProfileCard";
+
 function Navbar() {
+    const [showProfileCard, setShowProfileCard] = useState(false);
+
     const handleClick = () => {
      // Handle click event
     };
@@ -9,6 +14,10 @@ function Navbar() {
         sessionStorage.clear();
         window.location.reload();
     };
+
+    const toggleProfileCard = () => {
+        setShowProfileCard(!showProfileCard);
+    }
     
     return (
      <nav>
@@ -33,11 +42,14 @@ function Navbar() {
         <a href="/notif">Health Blog</a>
        </li>
        <li className="link">
-        <a href="/">Reviews</a>
+        <a href="/reviews">Reviews</a>
        </li>
        <li className="link">
         {isLogged ? (
-            <span>Welcome {username}</span>
+            <>
+            <span onClick={toggleProfileCard}>Welcome {username}</span>
+            <div>{showProfileCard && <ProfileCard />}</div>
+            </>
         ) : (
             <a href="../signup">
                 <button className="btn2">Sign Up</button>
@@ -54,6 +66,7 @@ function Navbar() {
             )}
        </li>
       </ul>
+
      </nav>
     );
     }
