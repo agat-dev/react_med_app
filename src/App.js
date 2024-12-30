@@ -13,6 +13,7 @@ import InstantConsultation from './Components/InstantConsultationBooking/Instant
 import Notification from './Components/Notification/Notification';
 import ReviewForm from './Components/ReviewForm/ReviewForm'
 import GiveReviews from './Components/ReviewForm/GiveReviews';
+import ReportsLayout from './Components/ReportsLayout/ReportsLayout';
 
 function App() {
   return (
@@ -32,7 +33,8 @@ function App() {
             <Route path="/login" element={<Login/>}/>          
             <Route path="/instant-consultation" element={<InstantConsultation/>}/>    
             <Route path="/reviews" element={<ReviewForm/>}/>                 
-            <Route path="/feedback" element={<GiveReviews/>}/>     
+            <Route path="/feedback" element={<GiveReviews/>}/>  
+            <Route path="/reports" element={<ReportsLayout />}/>
           </Routes>
         </BrowserRouter>
     </div>
