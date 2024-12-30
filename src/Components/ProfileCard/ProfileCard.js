@@ -3,7 +3,7 @@ import './ProfileCard.css';
 // Following code has been commented with appropriate comments for your reference. 
 // Import necessary modules from React and other files
 import React, { useEffect, useState } from "react";
-
+import ReportsLayout from '../ReportsLayout/ReportsLayout';
 import { API_URL } from '/home/project/react_med_app/src/server/config';
 import { useNavigate } from "react-router-dom";
 
@@ -162,8 +162,29 @@ const ProfileForm = () => {
   );
 };
 
-// Export the ProfileForm component as the default export
-export default ProfileForm;
 
+const ProfileCard = () => {
+    const [showForm, setShowForm] = useState(false);
+    const [showReports, setShowReports] = useState(false);
 
+    const handleForm = () => {
+        setShowForm(!showForm);
+    };
+    const handleReports = () => {
+        setShowReports(!showReports);
+    };
 
+    return (
+        <>
+            {!showForm && (
+                <div className="profile-card">
+                    <p onClick={handleForm}>Your Profile</p>
+                    <a href="/reports">Your Reports</a>
+                </div>
+            )}
+            {showForm && <ProfileForm />}
+        </>
+    );
+};
+
+export default ProfileCard;
