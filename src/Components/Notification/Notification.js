@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import './Notification.css'
 import Navbar from '../Navbar/Navbar';
+import Popup from 'reactjs-popup';
 
 // Function component Notification to display user notifications
 const Notification = ({ children }) => {
@@ -11,8 +12,13 @@ const Notification = ({ children }) => {
   const [doctorData, setDoctorData] = useState(null);
   const [doctorSpeciality, setDoctorSpeciality] = useState(null);
   const [AppointmentDate, setAppointmentDate] = useState(null);
+  const [showModal, setShowModal] = useState(true);
+  const [AppointmentData, setAppointmentData] = useState(null);
 
-  const [appointmentData, setAppointmentData] = useState(null);
+
+ 
+
+
 
   sessionStorage.setItem('hasNewAppointment', 'false');
 
@@ -67,15 +73,22 @@ const Notification = ({ children }) => {
   // Return JSX elements to display Navbar, children components, and appointment details if user is logged in
   return (
     <div>
-      {/* Render Navbar component */}
-      <Navbar ></Navbar>
+
       {/* Render children components */}
       {children}
       {/* Display appointment details if user is logged in and appointmentData is available */}
-      {isLoggedIn && appointmentData && (
+      {isLoggedIn && AppointmentData && (
         <>
+         <Popup
+      className='popup_notif'
+      modal
+      open={showModal}
+      onClose={() => setShowModal(false)}
+     >
+        {(close) => (
           <div className="appointment-card">
-            <div className="appointment-card__content">
+            <div className="appointment-card__content">                
+            <img src="/images/close.svg"  onClick={close} className='close_notif_btn'/>
               {/* Display title for appointment details */}
               <h3 className="appointment-card__title">Appointment Details</h3>
               <p className="appointment-card__message">
@@ -88,6 +101,8 @@ const Notification = ({ children }) => {
               </p>
             </div>
           </div>
+                )}
+          </Popup>
         </>
       )}
     </div>  
