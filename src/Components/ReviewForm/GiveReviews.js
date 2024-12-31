@@ -10,37 +10,29 @@ function GiveReviews() {
   const [formData, setFormData] = useState({
     name: '',
     review: '',
-    rating: 0
+    rating: 0,
   });
   // Function to handle form input changes
   const handleChange = (e) => {
-    // Update the form data based on user input
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
+
   // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmittedMessage(formData);
-    setFormData(
-        { 
-            username: formData.name,
-            review: formData.review,
-            rating: formData.rating
-        });
-        const formContent = {            
-            username: formData.name,
-            review: formData.review,
-            rating: formData.rating
-        }
-    localStorage.setItem('reviewData', formContent);
-
-
-
-    // Check if all required fields are filled before submission
-    if (formData.name && formData.review && formData.rating > 0) {
+    if (formData.name && formData.review && formData.rating) {
+      const message = `Name: ${formData.name}, Review: ${formData.review}, Rating: ${formData.rating}`;
+      setSubmittedMessage(message);
+      localStorage.setItem('reviewData', JSON.stringify(formData));
       setShowWarning(false);
     } else {
-      setShowWarning(true);
+      const existingData = JSON.parse(localStorage.getItem('reviewData')) || [];
+      const updatedData = [...existingData, formData];
+      localStorage.setItem('reviewData', JSON.stringify(updatedData));
     }
   };
   return (

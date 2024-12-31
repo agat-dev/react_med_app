@@ -98,12 +98,15 @@ const ProfileForm = () => {
         // Update the user details in session storage
         sessionStorage.setItem("name", updatedDetails.name);
         sessionStorage.setItem("phone", updatedDetails.phone);
+        localStorage.setItem("name",  updatedDetails.name);
+        localStorage.setItem("phone",  updatedDetails.phone);
 
         setUserDetails(updatedDetails);
         setEditMode(false);
         // Display success message to the user
         alert(`Profile Updated Successfully!`);
-        navigate("/");
+        navigate("/");        
+        window.location.reload();
       } else {
         // Handle error case
         throw new Error("Failed to update profile");
