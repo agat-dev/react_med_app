@@ -28,12 +28,18 @@ function GiveReviews() {
       const message = `Name: ${formData.name}, Review: ${formData.review}, Rating: ${formData.rating}`;
       setSubmittedMessage(message);
       sessionStorage.setItem('reviewData', JSON.stringify(formData));
+      // store the reviewData and the data in reviewDoc from session storage to the same item in local storage
+      const reviewData = JSON.parse(sessionStorage.getItem('reviewData')) || {};
+      const reviewDoc = JSON.parse(sessionStorage.getItem('reviewDoc')) || {};
+      const pastReviewData = { reviewData, reviewDoc };
+      localStorage.setItem('pastReviewData', JSON.stringify(pastReviewData));
       setShowWarning(false);
       window.location.href = '/reviews'; // Redirect to /reviews after submitting
     } else {
       setShowWarning(true);
     }
   };
+
   return (
     <Popup
       style={{ backgroundColor: '#FFFFFF' }}

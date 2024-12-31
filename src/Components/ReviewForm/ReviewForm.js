@@ -22,14 +22,8 @@ function ReviewForm() {
 
     const handleFeedbackClick = (index, name) => {
         const reviewDoc = { index, name };
-        //create const reviewDoc with session storage data of reveiwDoc or an empty object
-        const reviewData = JSON.parse(sessionStorage.getItem('reviewData')) || {};
         sessionStorage.setItem('reviewDoc', JSON.stringify(reviewDoc));
-
-        // set a pastReviewData object in local storage with the reviewData and reviewDoc data
-        const pastReviewData = { reviewData, reviewDoc };
-        localStorage.setItem('pastReviewData', JSON.stringify(pastReviewData));
-                // remove the review data from session storage
+        // remove the review data from session storage
         sessionStorage.removeItem('reviewData');
         setFormData({
             doctorIndex: index,
