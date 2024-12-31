@@ -27,12 +27,11 @@ function GiveReviews() {
     if (formData.name && formData.review && formData.rating) {
       const message = `Name: ${formData.name}, Review: ${formData.review}, Rating: ${formData.rating}`;
       setSubmittedMessage(message);
-      localStorage.setItem('reviewData', JSON.stringify(formData));
+      sessionStorage.setItem('reviewData', JSON.stringify(formData));
       setShowWarning(false);
+      window.location.href = '/reviews'; // Redirect to /reviews after submitting
     } else {
-      const existingData = JSON.parse(localStorage.getItem('reviewData')) || [];
-      const updatedData = [...existingData, formData];
-      localStorage.setItem('reviewData', JSON.stringify(updatedData));
+      setShowWarning(true);
     }
   };
   return (
@@ -59,6 +58,7 @@ function GiveReviews() {
           <div>
               <label htmlFor="rating">Rating:</label>
               <select id="rating" name="rating" value={formData.rating} onChange={handleChange} required>
+              <option value="" default disabled>Select a rating</option>
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
