@@ -10,39 +10,36 @@ function GiveReviews() {
   const [formData, setFormData] = useState({
     name: '',
     review: '',
-    rating: 0
+    rating: 0,
   });
   // Function to handle form input changes
   const handleChange = (e) => {
-    // Update the form data based on user input
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
+
   // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmittedMessage(formData);
-    setFormData(
-        { 
-            username: formData.name,
-            review: formData.review,
-            rating: formData.rating
-        });
-        const formContent = {            
-            username: formData.name,
-            review: formData.review,
-            rating: formData.rating
-        }
-    localStorage.setItem('reviewData', formContent);
-
-
-
-    // Check if all required fields are filled before submission
-    if (formData.name && formData.review && formData.rating > 0) {
+    if (formData.name && formData.review && formData.rating) {
+      const message = `Name: ${formData.name}, Review: ${formData.review}, Rating: ${formData.rating}`;
+      setSubmittedMessage(message);
+      sessionStorage.setItem('reviewData', JSON.stringify(formData));
+      // store the reviewData and the data in reviewDoc from session storage to the same item in local storage
+      const reviewData = JSON.parse(sessionStorage.getItem('reviewData')) || {};
+      const reviewDoc = JSON.parse(sessionStorage.getItem('reviewDoc')) || {};
+      const pastReviewData = { reviewData, reviewDoc };
+      localStorage.setItem('pastReviewData', JSON.stringify(pastReviewData));
       setShowWarning(false);
+      window.location.href = '/reviews'; // Redirect to /reviews after submitting
     } else {
       setShowWarning(true);
     }
   };
+
   return (
     <Popup
       style={{ backgroundColor: '#FFFFFF' }}
@@ -67,6 +64,7 @@ function GiveReviews() {
           <div>
               <label htmlFor="rating">Rating:</label>
               <select id="rating" name="rating" value={formData.rating} onChange={handleChange} required>
+              <option value="" default disabled>Select a rating</option>
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>

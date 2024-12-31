@@ -19,9 +19,12 @@ function ReviewForm() {
         getDoctors();
     }, []);
 
+
     const handleFeedbackClick = (index, name) => {
-        const reviewData = { index, name };
-        localStorage.setItem('reviewData', JSON.stringify(reviewData));
+        const reviewDoc = { index, name };
+        sessionStorage.setItem('reviewDoc', JSON.stringify(reviewDoc));
+        // remove the review data from session storage
+        sessionStorage.removeItem('reviewData');
         setFormData({
             doctorIndex: index,
             doctorName: name,
@@ -29,14 +32,27 @@ function ReviewForm() {
     };
 
  
-const DoctorLine = ({ name, speciality, review, index, doctorName }) => {
+const DoctorLine = ({ name, speciality, review, index }) => {     
+    const reviewDoc = JSON.parse(sessionStorage.getItem('reviewDoc')) || {};
+    const reviewData = JSON.parse(sessionStorage.getItem('reviewData')) || {};
+    const pastReviewData = JSON.parse(localStorage.getItem('pastReviewData')) || {};
+
     return (
         <>
         <div>{index}</div>
         <div>{name}</div>
         <div>{speciality}</div>
-        <div><a href='/feedback' className='btn2' onClick={() => handleFeedbackClick(index + 1, name)}>Give a review</a></div>
-        <div>{review ? review : ''}</div>
+        <div>
+        {pastReviewData.reviewDoc && pastReviewData.reviewDoc.name === name ? (
+          <span className='btn2 inactive'>Review Submitted</span>
+        ) : (
+          <a href='/feedback' className='btn2' onClick={() => handleFeedbackClick(index + 1, name)}>Give a review</a>
+        )}
+      </div>        
+      <div>      
+
+      {(pastReviewData.reviewDoc.name === name ? pastReviewData.reviewData.review : reviewDoc.name === name ? reviewData.review : '')}
+        </div>        
         </>
     );
 }       

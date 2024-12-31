@@ -6,12 +6,25 @@
     color: white;
     padding: 2rem;
     width:max-content;
-    position: absolute !important;
-    bottom: 0;
+    position: fixed !important;
+    top: 5rem;
     right: 0;
     color: white;
 }
 appointment-card__message {
     display: flex;
     flex-direction: column;
+}
+
+.popup_notif-content {
+    background: transparent;
+    border: none;
+}
+
+.close_notif_btn {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 5px;
+    position: relative;
+    left: 90%;
 }

@@ -98,7 +98,7 @@ font-weight: 700;
 }
 
 /* Styling for individual links in the navigation */
-.link a, span {
+.link a, span, .profile-card p  {
     padding: 0rem 1.5rem;
     color: var(--primary-900, #1F327E);
     text-decoration: none;

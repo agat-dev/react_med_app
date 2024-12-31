@@ -39,7 +39,7 @@ function Navbar() {
         <a href="/instant-consultation">Appointments</a>
        </li>
        <li className="link">
-        <a href="/notif">Health Blog</a>
+        <a href="/">Health Blog</a>
        </li>
        <li className="link">
         <a href="/reviews">Reviews</a>
