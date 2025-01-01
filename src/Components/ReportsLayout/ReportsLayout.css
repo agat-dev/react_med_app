@@ -1,0 +1,15 @@
+.reports-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
+    grid-template-rows: 3fr;
+    border: solid 1px black;
+    border-top: none;
+}
+.reports-grid .tr {
+    background: var(--primary-800);
+    color: white;
+}
+.reports-grid div {
+    border-top: solid 1px black;
+    padding: 15px;
+}

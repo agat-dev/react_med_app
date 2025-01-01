@@ -30,6 +30,7 @@
   
   .doctor-card-details {
     text-align: center;
+    margin-bottom: 3rem;
   }
   
   .doctor-card-detail-name {
@@ -118,7 +119,24 @@
   -webkit-scrollbar {
     display: none;
 }
+.close_btn {
+  background-color: white; 
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  padding: 5px;
+  border: solid 3px var(--primary-800);
+  border-radius: 30px;
+}
 
+.bookedInfo {
+    padding-top: 3rem;
+    width: 20rem;
+    margin: auto;
+}
+.bookedInfo button {
+    margin-top: 3rem;
+}
 
 
 }
