@@ -23,6 +23,7 @@ function ReviewForm() {
     const handleFeedbackClick = (index, name) => {
         const reviewDoc = { index, name };
 <<<<<<< HEAD
+<<<<<<< HEAD
         //create const reviewDoc with session storage data of reveiwDoc or an empty object
         const reviewData = JSON.parse(sessionStorage.getItem('reviewData')) || {};
         sessionStorage.setItem('reviewDoc', JSON.stringify(reviewDoc));
@@ -35,6 +36,10 @@ function ReviewForm() {
         sessionStorage.setItem('reviewDoc', JSON.stringify(reviewDoc));
         // remove the review data from session storage
 >>>>>>> 66412d80c49d4f21d6984c190a10a9d7ccf89043
+=======
+        sessionStorage.setItem('reviewDoc', JSON.stringify(reviewDoc));
+        // remove the review data from session storage
+>>>>>>> 783977b1226129bbefb5dd26bc2356ac2d41943b
         sessionStorage.removeItem('reviewData');
         setFormData({
             doctorIndex: index,
@@ -47,6 +52,7 @@ const DoctorLine = ({ name, speciality, review, index }) => {
     const reviewDoc = JSON.parse(sessionStorage.getItem('reviewDoc')) || {};
     const reviewData = JSON.parse(sessionStorage.getItem('reviewData')) || {};
     const pastReviewData = JSON.parse(localStorage.getItem('pastReviewData')) || {};
+<<<<<<< HEAD
 <<<<<<< HEAD
   
     return (
@@ -66,6 +72,8 @@ const DoctorLine = ({ name, speciality, review, index }) => {
       </div>        
       </>
 =======
+=======
+>>>>>>> 783977b1226129bbefb5dd26bc2356ac2d41943b
 
     return (
         <>
@@ -84,7 +92,10 @@ const DoctorLine = ({ name, speciality, review, index }) => {
       {(pastReviewData.reviewDoc.name === name ? pastReviewData.reviewData.review : reviewDoc.name === name ? reviewData.review : '')}
         </div>        
         </>
+<<<<<<< HEAD
 >>>>>>> 66412d80c49d4f21d6984c190a10a9d7ccf89043
+=======
+>>>>>>> 783977b1226129bbefb5dd26bc2356ac2d41943b
     );
 }       
 
